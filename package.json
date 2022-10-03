@@ -1,0 +1,25 @@
+{
+  "name": "playing-with-lychrel-numbers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --watchAll",
+    "start": "node index.js",
+    "start-performance-analysis": "node performanceAnalysis.js",
+    "debug": "node inspect index.js",
+    "debug-performance-analysis": "node inspect performanceAnalysis.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.1.2"
+  },
+  "dependencies": {
+    "asciichart": "^1.5.25",
+    "moment": "^2.29.4",
+    "moment-duration-format": "^2.3.2"
+  }
+}
