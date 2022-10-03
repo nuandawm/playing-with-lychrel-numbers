@@ -52,7 +52,7 @@ describe('reverse number (alternative algo)', () => {
   })
 })
 
-describe('196 algorithm', () => {
+describe('196 algorithm (recursive version)', () => {
   it('should keep unchanged every palindrome number in 0 cycles', () => {
     const mockReverseAlgo = jest.fn()
     mockReverseAlgo.mockReturnValue(556909655)
@@ -126,6 +126,18 @@ describe('196 algorithm', () => {
     const { result, hasError } = oneNineSixAlgorithm(reverseDigitsAlgorithm)(196)
     expect(result).toBe(null)
     expect(hasError).toBe(true)
+  })
+
+  it('should fail given 394', () => {
+    const { result, hasError } = oneNineSixAlgorithm(reverseDigitsAlgorithm)(394)
+    expect(result).toBe(null)
+    expect(hasError).toBe(true)
+  })
+
+  it('should stop at the nth cycle given a cycleController of n when the specified number needs a greater number of cycles', () => {
+    const { result, cycleCount } = oneNineSixAlgorithm(reverseDigitsAlgorithm)(89, 3)
+    expect(result).toBe(null)
+    expect(cycleCount).toBe(3)
   })
 })
 
@@ -202,5 +214,11 @@ describe('196 algorithm (non recursive version)', () => {
     const { result, hasError } = oneNineSixAlgorithmNonRecursive(reverseDigitsAlgorithm)(394, 100000)
     expect(result).toBe(null)
     expect(hasError).toBe(true)
+  })
+
+  it('should stop at the nth cycle given a cycleController of n when the specified number needs a greater number of cycles', () => {
+    const { result, cycleCount } = oneNineSixAlgorithmNonRecursive(reverseDigitsAlgorithm)(89, 3)
+    expect(result).toBe(null)
+    expect(cycleCount).toBe(3)
   })
 })
